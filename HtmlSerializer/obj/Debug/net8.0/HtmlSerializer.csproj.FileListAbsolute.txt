@@ -1,0 +1,18 @@
+C:\Users\user1\Documents\תכנות\Practicode\HtmlSerializer\HtmlSerializer\bin\Debug\net8.0\HtmlSerializer.exe
+C:\Users\user1\Documents\תכנות\Practicode\HtmlSerializer\HtmlSerializer\bin\Debug\net8.0\HtmlSerializer.deps.json
+C:\Users\user1\Documents\תכנות\Practicode\HtmlSerializer\HtmlSerializer\bin\Debug\net8.0\HtmlSerializer.runtimeconfig.json
+C:\Users\user1\Documents\תכנות\Practicode\HtmlSerializer\HtmlSerializer\bin\Debug\net8.0\HtmlSerializer.dll
+C:\Users\user1\Documents\תכנות\Practicode\HtmlSerializer\HtmlSerializer\bin\Debug\net8.0\HtmlSerializer.pdb
+C:\Users\user1\Documents\תכנות\Practicode\HtmlSerializer\HtmlSerializer\obj\Debug\net8.0\HtmlSerializer.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\user1\Documents\תכנות\Practicode\HtmlSerializer\HtmlSerializer\obj\Debug\net8.0\HtmlSerializer.AssemblyInfoInputs.cache
+C:\Users\user1\Documents\תכנות\Practicode\HtmlSerializer\HtmlSerializer\obj\Debug\net8.0\HtmlSerializer.AssemblyInfo.cs
+C:\Users\user1\Documents\תכנות\Practicode\HtmlSerializer\HtmlSerializer\obj\Debug\net8.0\HtmlSerializer.csproj.CoreCompileInputs.cache
+C:\Users\user1\Documents\תכנות\Practicode\HtmlSerializer\HtmlSerializer\obj\Debug\net8.0\HtmlSerializer.sourcelink.json
+C:\Users\user1\Documents\תכנות\Practicode\HtmlSerializer\HtmlSerializer\obj\Debug\net8.0\HtmlSerializer.dll
+C:\Users\user1\Documents\תכנות\Practicode\HtmlSerializer\HtmlSerializer\obj\Debug\net8.0\refint\HtmlSerializer.dll
+C:\Users\user1\Documents\תכנות\Practicode\HtmlSerializer\HtmlSerializer\obj\Debug\net8.0\HtmlSerializer.pdb
+C:\Users\user1\Documents\תכנות\Practicode\HtmlSerializer\HtmlSerializer\obj\Debug\net8.0\HtmlSerializer.genruntimeconfig.cache
+C:\Users\user1\Documents\תכנות\Practicode\HtmlSerializer\HtmlSerializer\obj\Debug\net8.0\ref\HtmlSerializer.dll
+C:\Users\user1\Documents\תכנות\Practicode\HtmlSerializer\HtmlSerializer\bin\Debug\net8.0\JSON Files\HtmlTags.json
+C:\Users\user1\Documents\תכנות\Practicode\HtmlSerializer\HtmlSerializer\bin\Debug\net8.0\JSON Files\HtmlVoidTags.json
+C:\Users\user1\Documents\תכנות\Practicode\HtmlSerializer\HtmlSerializer\bin\Debug\net8.0\HtmlPage.html
