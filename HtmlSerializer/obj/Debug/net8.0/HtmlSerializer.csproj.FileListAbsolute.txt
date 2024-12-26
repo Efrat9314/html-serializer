@@ -15,4 +15,3 @@ C:\Users\user1\Documents\תכנות\Practicode\HtmlSerializer\HtmlSerializer\obj
 C:\Users\user1\Documents\תכנות\Practicode\HtmlSerializer\HtmlSerializer\obj\Debug\net8.0\ref\HtmlSerializer.dll
 C:\Users\user1\Documents\תכנות\Practicode\HtmlSerializer\HtmlSerializer\bin\Debug\net8.0\JSON Files\HtmlTags.json
 C:\Users\user1\Documents\תכנות\Practicode\HtmlSerializer\HtmlSerializer\bin\Debug\net8.0\JSON Files\HtmlVoidTags.json
-C:\Users\user1\Documents\תכנות\Practicode\HtmlSerializer\HtmlSerializer\bin\Debug\net8.0\HtmlPage.html

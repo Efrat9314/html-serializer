@@ -1,78 +1,44 @@
-﻿// See https://aka.ms/new-console-template for more information
-using HtmlSerializer;
-using System.Text.RegularExpressions;
-using System.Xml.Linq;
+﻿using HtmlSerializer;
 
-Console.WriteLine("Program Begin");
+var serializer = new HtmlSerializer.HtmlSerializer();
+string html = await serializer.Load("https://www.w3schools.com/js/");
+serializer.ProcessHtml(html);
 
-var html = await Load("https://www.w3schools.com/js/");
-var cleanHtml = new Regex("\\s+").Replace(html, " ");
-var htmlLines = new Regex("<(.*?)>").Split(cleanHtml).Where(x => !string.IsNullOrWhiteSpace(x)).ToList();
-string[] htmlTags = HtmlHelper.Instance.HtmlTags;
-string[] htmlVoidTags = HtmlHelper.Instance.HtmlVoidTags;
+//PrintTree(serializer.Head);
 
-async Task<string> Load(string url)
+string query = "a#navbtn_certified.tnb-nav-btn.w3-bar-item .fa.fa-caret-down";
+Selector root = Selector.ParseSelectorQuery(query);
+
+PrintSelectorHierarchy(root);
+
+serializer.Head.FindBySelector(root).ToList().ForEach(x =>
 {
-    HttpClient client = new HttpClient();
-    var response = await client.GetAsync(url);
-    var html = await response.Content.ReadAsStringAsync();
-    return html;
-}
+    Console.WriteLine($"name: {(x.Name ?? "null")}, parent: {(x.Parent?.Name ?? "null")}");
+});
 
-HtmlElement head = new HtmlElement(htmlLines[0], null);
-void CreateHtmlTree()
+Console.ReadLine();
+
+
+//auxiliary functions
+void PrintTree(HtmlElement element, int level = 0)
 {
-    int i = 1;
-    HtmlElement current = head, child;
+    string indent = new string(' ', level * 2);
 
-    while (i < htmlLines.Count)
+    string parentName = element.Parent != null ? element.Parent.Name : "None";
+    Console.WriteLine($"{indent}<Name: {element.Name}, Id: {element.Id}, Parent: {parentName}, Classes: {string.Join(", ", element.Classes ?? new List<string>())}>");
+
+    if (!string.IsNullOrEmpty(element.InnerHtml))
     {
-        var firstArg = htmlLines[i].Split()[0];
+        Console.WriteLine($"{indent}  InnerHtml: {element.InnerHtml}");
+    }
 
-        if (firstArg == "/html")
-            break;
-
-        if (htmlTags.Contains(firstArg))
-        {
-            child = new HtmlElement(htmlLines[i], current);
-            current.Children.Add(child);
-
-            if (!htmlVoidTags.Contains(firstArg))
-                current = child;
-
-        }
-        else if (firstArg.StartsWith('/'))
-        {
-            if (current.Parent != null)
-                current = current.Parent;
-        }
-        else
-        {
-            current.InnerHtml += htmlLines[i];
-        }
-
-        i++;
+    foreach (var child in element.Children)
+    {
+        PrintTree(child, level + 1);
     }
 }
 
-    void PrintTree(HtmlElement element, int level = 0)
-    {
-        string indent = new string(' ', level * 2);
-
-        string parentName = element.Parent != null ? element.Parent.Name : "None";
-        Console.WriteLine($"{indent}<Name: {element.Name}, Id: {element.Id}, Parent: {parentName}, Classes: {string.Join(", ", element.Classes ?? new List<string>())}>");
-
-        if (!string.IsNullOrEmpty(element.InnerHtml))
-        {
-            Console.WriteLine($"{indent}  InnerHtml: {element.InnerHtml}");
-        }
-
-        foreach (var child in element.Children)
-        {
-            PrintTree(child, level + 1);
-        }
-    }
- void PrintSelectorHierarchy(Selector selector)
+void PrintSelectorHierarchy(Selector selector)
 {
     while (selector != null)
     {
@@ -80,21 +46,4 @@ void CreateHtmlTree()
         selector = selector.Child;
     }
 }
-
-CreateHtmlTree();
-//PrintTree(head);
-//head.Descendants().ToList().ForEach(e =>
-//{
-//    Console.WriteLine($"name: {(e.Name ?? "null")},parent: {(e.Parent?.Name ?? "null")}");
-//});
-
-string query = "a#navbtn_certified.tnb-nav-btn.w3-bar-item .fa.fa-caret-down";
-Selector root = Selector.ParseSelectorQuery(query);
-PrintSelectorHierarchy(root);
-
-head.FindBySelector(root).ToList().ForEach(x=> {
-    Console.WriteLine($"name: {(x.Name ?? "null")},parent: {(x.Parent?.Name ?? "null")}");
-});
-
-Console.ReadLine();
 

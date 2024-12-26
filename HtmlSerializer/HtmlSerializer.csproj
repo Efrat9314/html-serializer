@@ -8,16 +8,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="HtmlPage.html" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Content Include="HtmlPage.html">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-  </ItemGroup>
-
-  <ItemGroup>
     <None Update="JSON Files\HtmlTags.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
